@@ -1,0 +1,46 @@
+-- Add data to table Address
+insert into Address(addressID, address)
+VALUES (1, 'Me Tri');
+insert into Address(addressID, address)
+VALUES (2, 'Cau Giay');
+insert into Address(addressID, address)
+VALUES (3, 'My Dinh');
+insert into Address(addressID, address)
+VALUES (4, 'Ba Dinh');
+insert into Address(addressID, address)
+VALUES (5, 'Dong Da');
+
+-- Add data to table Class
+insert into Class(classID, className, classLanguage, classDescription)
+VALUES (1, 'E1', 'English', 'VSTEP B1');
+insert into Class(classID, className, classLanguage, classDescription)
+VALUES (2, 'E2', 'English', 'VSTEP B2');
+insert into Class(classID, className, classLanguage, classDescription)
+VALUES (3, 'J1', 'Japanese', 'JLPT N3');
+insert into Class(classID, className, classLanguage, classDescription)
+VALUES (4, 'J2', 'Japanese', 'JLPT N4');
+insert into Class(classID, className, classLanguage, classDescription)
+VALUES (5, 'P1', 'Programming', 'Java');
+
+-- Add data to table Student
+insert into Students(studentID, studentFullName, address_ID, age, phone, class_id)
+VALUES (1, 'Kieu Anh', 2, 18, 123, 1);
+insert into Students(studentID, studentFullName, address_ID, age, phone, class_id)
+VALUES (2, 'Minh Tuan', 1, 19, 234, 2);
+insert into Students(studentID, studentFullName, address_ID, age, phone, class_id)
+VALUES (3, 'Tran Dat', 4, 20, 345, 3);
+insert into Students(studentID, studentFullName, address_ID, age, phone, class_id)
+VALUES (4, 'Phan Giang', 3, 22, 456, 4);
+insert into Students(studentID, studentFullName, address_ID, age, phone, class_id)
+VALUES (5, 'Tran Khanh', 5, 35, 567, 5);
+insert into Students(studentID, studentFullName, address_ID, age, phone, class_id)
+VALUES (6, 'Minh Hieu', 3, 26, 678, 1);
+insert into Students(studentID, studentFullName, address_ID, age, phone, class_id)
+VALUES (7, 'Binh Giang', 2, 31, 789, 2);
+insert into Students(studentID, studentFullName, address_ID, age, phone, class_id)
+VALUES (8, 'Do Duc', 5, 24, 890, 3);
+insert into Students(studentID, studentFullName, address_ID, age, phone, class_id)
+VALUES (9, 'Le Quan', 1, 27, 901, 4);
+insert into Students(studentID, studentFullName, address_ID, age, phone, class_id)
+VALUES (10, 'Tran Tung', 4, 24, 321, 5);
+

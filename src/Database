@@ -9,6 +9,8 @@ create table Address
 
 alter table Address
     modify column addressID int primary key;
+alter table Address
+    modify column address varchar(20);
 
 create table Class
 (
