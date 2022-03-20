@@ -1,0 +1,48 @@
+create database StudentManagement;
+use StudentManagement;
+
+create table Address
+(
+    addressID int,
+    address   varchar(2)
+);
+
+alter table Address
+    modify column addressID int primary key;
+
+create table Class
+(
+    classID          int primary key,
+    className        varchar(100),
+    classLanguage    varchar(20),
+    classDescription varchar(100)
+);
+
+create table Students
+(
+    studentID       int primary key,
+    studentFullName varchar(50),
+    address_ID      int,
+    age             int,
+    phone           int unique,
+    class_id        int,
+    foreign key (address_ID) references Address (addressID),
+    foreign key (class_id) references Class (classID)
+);
+
+create table Course
+(
+    courseID          int primary key,
+    courseName        varchar(30),
+    courseDescription varchar(100)
+);
+
+create table Point
+(
+    pointID    int primary key,
+    course_ID  int,
+    student_ID int,
+    point      float,
+    foreign key (course_ID) references Course (courseID),
+    foreign key (student_ID) references Students (studentID)
+)
