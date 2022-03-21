@@ -1,0 +1,15 @@
+update Point
+set student_ID=6
+where pointID = 8;
+update Point
+set student_ID=8
+where pointID = 10;
+update Point
+set student_ID=9
+where pointID = 12;
+update Point
+set student_ID=7
+where pointID = 11;
+update Point
+set student_ID=10
+where pointID = 4;
