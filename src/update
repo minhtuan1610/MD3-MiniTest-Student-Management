@@ -13,3 +13,6 @@ where pointID = 11;
 update Point
 set student_ID=10
 where pointID = 4;
+update Students
+set studentFullName='Nguyen Minh Hieu'
+where studentID = 6;

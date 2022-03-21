@@ -1,0 +1,32 @@
+-- Select students with their full-name begin with 'Nguyen'
+select *
+from Students
+where studentFullName like 'Nguyen%';
+
+-- Select students has 'Anh' in their name
+select *
+from Students
+where studentFullName like '%Anh%';
+
+-- Looking for students with the age range 18-35
+select *
+from Students
+where age between 18 and 35;
+
+-- Looking for student with the ID of 12 or 13 or 5
+select *
+from Students
+where studentID = 12
+   or studentID = 5;
+
+-- The number of students of each class
+select className, count(studentFullName)
+from Class
+         join Students on Class.classID = Students.class_id
+group by className;
+
+-- The number of students of each address
+select address, COUNT(studentID)
+from Address
+         join Students S on Address.addressID = S.address_ID
+group by address;
