@@ -6,7 +6,7 @@ where studentFullName like 'Nguyen%';
 -- Select students has 'Anh' in their name
 select *
 from Students
-where studentFullName like '%Anh%';
+where studentFullName like '% Anh%';
 
 -- Looking for students with the age range 18-35
 select *
@@ -30,3 +30,30 @@ select address, COUNT(studentID)
 from Address
          join Students S on Address.addressID = S.address_ID
 group by address;
+
+-- The average points of courses
+select courseName, avg(point)
+from Course
+         join Point P on Course.courseID = P.course_ID
+group by courseName;
+
+-- Display the course with max point
+-- Manner 1:
+create table maximumPoint
+    (
+        select avg(point), count(courseName), Course.courseName
+        from Course
+                 join Point P on Course.courseID = P.course_ID
+        group by Course.courseName
+    );
+select courseName, max(`avg(point)`)
+from maximumPoint
+group by courseName;
+
+-- Manner 2:
+select courseName, avg(point)
+from Course
+         join Point P on Course.courseID = P.course_ID
+group by courseName
+order by avg(point) desc
+limit 1;
