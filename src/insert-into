@@ -44,3 +44,48 @@ VALUES (9, 'Le Quan', 1, 27, 901, 4);
 insert into Students(studentID, studentFullName, address_ID, age, phone, class_id)
 VALUES (10, 'Tran Tung', 4, 24, 321, 5);
 
+-- Add data to table Course
+insert into Course (courseID, courseName, courseDescription)
+VALUES (1, 'E-Begin', 'Beginner');
+insert into Course (courseID, courseName, courseDescription)
+VALUES (2, 'E-Intermediate', 'Intermediate-level');
+insert into Course (courseID, courseName, courseDescription)
+VALUES (3, 'E-Advance', 'Advanced-level');
+insert into Course (courseID, courseName, courseDescription)
+VALUES (4, 'J-Begin', 'Target N4');
+insert into Course (courseID, courseName, courseDescription)
+VALUES (5, 'J-Intermediate', 'Target N3');
+insert into Course (courseID, courseName, courseDescription)
+VALUES (6, 'Bootcamp-Java', 'Begin-level');
+
+-- Add data to table Point
+insert into Point(course_ID, student_ID, point)
+VALUES (1, 1, 5);
+insert into Point(course_ID, student_ID, point)
+VALUES (3, 2, 7.5);
+insert into Point(course_ID, student_ID, point)
+VALUES (3, 3, 8);
+insert into Point(course_ID, student_ID, point)
+VALUES (2, 4, 6.5);
+insert into Point(course_ID, student_ID, point)
+VALUES (5, 5, 9);
+insert into Point(course_ID, student_ID, point)
+VALUES (2, 3, 7);
+insert into Point(course_ID, student_ID, point)
+VALUES (4, 5, 6);
+insert into Point(course_ID, student_ID, point)
+VALUES (2, 5, 8.5);
+insert into Point(course_ID, student_ID, point)
+VALUES (1, 2, 8);
+insert into Point(course_ID, student_ID, point)
+VALUES (3, 4, 5.5);
+insert into Point(course_ID, student_ID, point)
+VALUES (1, 1, 10);
+insert into Point(course_ID, student_ID, point)
+VALUES (3, 5, 9.5);
+insert into Point(course_ID, student_ID, point)
+VALUES (5, 3, 7);
+insert into Point(course_ID, student_ID, point)
+VALUES (2, 4, 8);
+insert into Point(course_ID, student_ID, point)
+VALUES (4, 2, 7);

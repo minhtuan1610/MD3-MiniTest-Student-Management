@@ -47,4 +47,6 @@ create table Point
     point      float,
     foreign key (course_ID) references Course (courseID),
     foreign key (student_ID) references Students (studentID)
-)
+);
+alter table Point
+    modify pointID int auto_increment;
