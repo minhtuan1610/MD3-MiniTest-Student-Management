@@ -39,16 +39,20 @@ group by courseName;
 
 -- Display the course with max point
 -- Manner 1:
-create table maximumPoint
+create table averagePoint
     (
-        select avg(point), count(courseName), Course.courseName
+        select courseName, avg(point) as avgP
         from Course
                  join Point P on Course.courseID = P.course_ID
-        group by Course.courseName
+        group by courseName
     );
-select courseName, max(`avg(point)`)
-from maximumPoint
-group by courseName;
+
+select course_ID, max(point) as mP
+from Point
+group by course_ID
+having mP >= all (select max(point)
+                  from Point
+                  group by course_ID);
 
 -- Manner 2:
 select courseName, avg(point)
@@ -57,3 +61,26 @@ from Course
 group by courseName
 order by avg(point) desc
 limit 1;
+
+-- Manner 3: chi Kieu Anh goi y
+select avg(point)
+from Course
+         join Point P on Course.courseID = P.course_ID
+group by courseName;
+
+select courseName, avg(point) as 'DTB_max'
+from Course
+         join Point P on Course.courseID = P.course_ID
+group by courseName
+having DTB_max >= all (select avg(point)
+                       from Course
+                                join Point P on Course.courseID = P.course_ID
+                       group by courseName);
+
+select courseName, avg(point) as 'DTB_max'
+from Course
+         join Point P on Course.courseID = P.course_ID
+group by courseName
+having DTB_max >= all (select avg(point)
+                       from Point
+                       group by course_ID);
