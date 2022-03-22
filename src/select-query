@@ -38,15 +38,6 @@ from Course
 group by courseName;
 
 -- Display the course with max point
--- Manner 1:
-create table averagePoint
-    (
-        select courseName, avg(point) as avgP
-        from Course
-                 join Point P on Course.courseID = P.course_ID
-        group by courseName
-    );
-
 select course_ID, max(point) as mP
 from Point
 group by course_ID
